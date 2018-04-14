@@ -21,7 +21,6 @@ Route::get('/help', 'StaticPagesController@help')->name('help');
 Route::get('/about', 'StaticPagesController@about')->name('about');
 
 Route::get('signup', 'UsersController@create')->name('signup');
-
 Route::resource('users', 'UsersController');
 //上面一行代码Route::resource('users', 'UsersController');等同于：
 Route::get('/users/create', 'UsersController@create')->name('users.create');    //创建用户的页面
@@ -35,3 +34,7 @@ Route::delete('/users/{user}', 'UsersController@destroy')->name('users.destroy')
 Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');   //修改单个用户信息的页面
 Route::patch('/users/{user}', 'UsersController@update')->name('users.update');  //修改用户
 //上面一行代码将等同于end
+
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');
