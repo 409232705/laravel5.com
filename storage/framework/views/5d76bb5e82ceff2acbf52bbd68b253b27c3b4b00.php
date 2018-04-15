@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('title', '登录'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -19,7 +20,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="password">密码：</label>
+                        <label for="password">密码（<a href="<?php echo e(route('password.request')); ?>">忘记密码</a>）：</label>
                         <input type="password" name="password" class="form-control" value="<?php echo e(old('password')); ?>">
                     </div>
 
@@ -32,7 +33,7 @@
 
                 <hr>
 
-                <p>还没账号？<a href="<?php echo e(('signup')); ?>">现在注册！</a></p>
+                <p>还没账号？<a href="<?php echo e(route('signup')); ?>">现在注册！</a></p>
             </div>
         </div>
     </div>
