@@ -7,9 +7,16 @@
                     <section class="user_info">
                         <?php echo $__env->make('shared._user_info', ['user' => $user], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                     </section>
+                    <section class="stats">
+                        <?php echo $__env->make('shared._stats', ['user' => $user], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    </section>
                 </div>
             </div>
             <div class="col-md-12">
+                <?php if(Auth::check()): ?>
+                    <?php echo $__env->make('users._follow_form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+
                 <?php if(count($statuses) > 0): ?>
                     <ol class="statuses">
                         <?php $__currentLoopData = $statuses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

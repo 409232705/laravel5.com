@@ -14,6 +14,9 @@
                 <section class="user_info">
                     <?php echo $__env->make('shared._user_info', ['user' => Auth::user()], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 </section>
+                <section class="stats">
+                    <?php echo $__env->make('shared._stats', ['user' => Auth::user()], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </section>
             </aside>
         </div>
     <?php else: ?>
