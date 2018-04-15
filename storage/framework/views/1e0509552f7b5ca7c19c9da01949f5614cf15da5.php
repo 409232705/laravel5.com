@@ -9,6 +9,17 @@
                     </section>
                 </div>
             </div>
+            <div class="col-md-12">
+                <?php if(count($statuses) > 0): ?>
+                    <ol class="statuses">
+                        <?php $__currentLoopData = $statuses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $status): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php echo $__env->make('statuses._status', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ol>
+                    <?php echo $statuses->render(); ?>
+
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 <?php $__env->stopSection(); ?>
